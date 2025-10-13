@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "559678596399",
+    "project_id": "bizreview-app",
+    "storage_bucket": "bizreview-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:559678596399:android:64020743fe9184b9456dda",
+        "android_client_info": {
+          "package_name": "com.example.bizreview"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "559678596399-g6u1ent8hm8qgat3knloj7o9lrtp8alc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bizreview",
+            "certificate_hash": "dc028cd8e13d433682c18afae45ebb104d7d5eb8"
+          }
+        },
+        {
+          "client_id": "559678596399-injdkdcppla43fsqdpo1p27k0cb2a2al.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJYvyXJ0qXHciCtqcER_Xhxuo-cOsh5ms"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "559678596399-injdkdcppla43fsqdpo1p27k0cb2a2al.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
