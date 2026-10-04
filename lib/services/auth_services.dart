@@ -91,4 +91,25 @@ class AuthServices {
       return "Google sign-in failed: ${e.toString()}";
     }
   }
+
+  // Send password reset email:
+  Future<String?> sendPasswordResetEmail(String email) async {
+    try {
+      await FirebaseAuth.instance.sendPasswordResetEmail(email: email.trim());
+      return "Success";
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        return 'No user found for that email address.';
+      } else if (e.code == 'invalid-email') {
+        return 'The email address is not valid.';
+      } else if (e.code == 'missing-email') {
+        return 'Please enter your email address.';
+      }
+      return e.message ?? 'Failed to send password reset email.';
+    } catch (e) {
+      print("Password reset error: $e");
+      return "Failed to send reset email: ${e.toString()}";
+    }
+  }
 }
+

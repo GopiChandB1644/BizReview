@@ -1,4 +1,5 @@
 import 'package:bizreview/provider/bizprovider.dart';
+import 'package:bizreview/services/notification_service.dart';
 import 'package:bizreview/widgets/auth_wrapper.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +8,13 @@ import 'package:provider/provider.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  final notificationService = NotificationService();
+  await notificationService.requestPermission();
+  await notificationService.getDeviceToken();
+  await notificationService.initializeLocalNotificationSystem();
+  notificationService.initializeForegroundNotifications();
+  notificationService.initializeNotificationTapHandling();
+  await notificationService.checkInitialMessage();
   runApp(
     ChangeNotifierProvider(
       create: (_) => Bizprovider(),

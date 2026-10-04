@@ -26,6 +26,7 @@ class Bizprovider extends ChangeNotifier {
   bool isLogingIn = false;
   bool isSavingProfile = false;
   bool isSavingBusiness = false;
+  bool isResettingPassword = false;
 
   //--------------*------------------//
 
@@ -446,6 +447,21 @@ class Bizprovider extends ChangeNotifier {
           context,
         ).showSnackBar(SnackBar(content: Text(result)));
       }
+    }
+  }
+
+  Future<String?> resetPassword(String email) async {
+    if (isResettingPassword) return null;
+
+    isResettingPassword = true;
+    notifyListeners();
+
+    try {
+      final result = await authServices.sendPasswordResetEmail(email);
+      return result;
+    } finally {
+      isResettingPassword = false;
+      notifyListeners();
     }
   }
 
