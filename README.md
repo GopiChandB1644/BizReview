@@ -45,4 +45,8 @@ A Flutter mobile application for reviewing and rating businesses with Firebase b
 - Firebase account
 - Android Studio / Xcode
 
+### Installation
 
+1.Clone the respository:
+https://github.com/GopiChandB1644/BizReview.git
+cd BizReview
